@@ -9,6 +9,24 @@ Four [agent skills](https://gaffa.dev/docs/ai-tools/tools/gaffa-ai-skills) for b
 | [`gaffa-debug`](skills/gaffa-debug/) | `/gaffa-debug` | Diagnoses a failing request or `brq_*` id from its recording and proposes a minimal patch. |
 | [`gaffa-support`](skills/gaffa-support/) | `/gaffa-support` (slash only) | Helps when stuck: tries to resolve the problem first, then packages a redacted local report to email to support. Slash only on Claude Code, Cursor, Codex, Copilot and Pi. Pi honors `disable-model-invocation: true`, so the skill auto-hides and is reached via `/skill:gaffa-support`. Antigravity has no way to opt a skill out of automatic selection, so there the agent can still reach for it. |
 
+## Install with the Gaffa CLI
+
+The quickest route is the [Gaffa CLI](https://gaffa.dev/docs/ai-tools/tools/gaffa-cli). It copies the four skills into the tools you pick and registers the Gaffa docs MCP server in each one, for Claude Code, Codex, GitHub Copilot, Cursor, Antigravity and Pi. It runs through npx, so there is nothing to install first. Run it in the project you want to set up:
+
+```
+npx @gaffa-dev/cli install
+```
+
+With no flags it asks which tools to set up, defaulting to the ones it detects, and which scope. To skip the questions, pass them:
+
+```
+npx @gaffa-dev/cli install --tools=claude-code,codex --scope=personal
+```
+
+`--scope=project`, the default, writes into the working directory so you can commit the skills with the repo. `--scope=personal` writes into your home config. Running `install` again updates to the current skills, and `npx @gaffa-dev/cli doctor` reports what is set up and whether it is out of date. The [gaffa-cli repository](https://github.com/GaffaAI/gaffa-cli) covers the rest, including `uninstall`.
+
+To install as a plugin or by copying instead, read on.
+
 ## Install as a plugin
 
 This repo is a plugin. Installing it brings in all four skills and registers the Gaffa docs MCP server in one step, so there is nothing to copy and nothing to configure. Pi is the one exception.
