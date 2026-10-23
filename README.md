@@ -11,7 +11,7 @@ Four [agent skills](https://gaffa.dev/docs/ai-tools/tools/gaffa-ai-skills) for b
 
 ## Install with the Gaffa CLI
 
-The quickest route is the [Gaffa CLI](https://gaffa.dev/docs/ai-tools/tools/gaffa-cli). It copies the four skills into the tools you pick and registers the Gaffa docs MCP server in each one, for Claude Code, Codex, GitHub Copilot, Cursor, Antigravity and Pi. It runs through npx, so there is nothing to install first. Run it in the project you want to set up:
+The quickest route is the [Gaffa CLI](https://gaffa.dev/docs/ai-tools/tools/gaffa-cli). It copies the four skills into the tools you pick and registers the Gaffa docs MCP server in each one, for Claude Code, Codex, GitHub Copilot, Cursor, Antigravity and Pi. It runs through npx, so there is nothing to install beyond Node.js 22 or newer. Run it in the project you want to set up:
 
 ```
 npx @gaffa-dev/cli install
